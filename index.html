@@ -5,93 +5,109 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Finance Manager Dashboard</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
     <div class="container">
         <header>
-            <h1>Finance Manager</h1>
-            <button id="theme-toggle">🌗 Mode</button>
+            <div class="left">
+                <h1>Finance Manager</h1>
+                <button id="reset-data" class="btn reset">Reset Data</button>
+            </div>
+            <div class="right">
+                <button id="theme-toggle" class="btn">Toggle Theme</button>
+            </div>
         </header>
 
-        <!-- Summary Cards -->
+        <!-- Summary -->
         <section class="summary">
             <div class="card">
-                <p>Total Income</p>
+                <p class="label">Total Income</p>
                 <h2 id="total-income">₹0</h2>
             </div>
             <div class="card">
-                <p>Total Expense</p>
+                <p class="label">Total Expense</p>
                 <h2 id="total-expense">₹0</h2>
             </div>
             <div class="card">
-                <p>Income Left</p>
+                <p class="label">Income Left</p>
                 <h2 id="income-left">₹0</h2>
             </div>
             <div class="card">
-                <p>Saving Rate</p>
+                <p class="label">Saving Rate</p>
                 <h2 id="saving-rate">0%</h2>
             </div>
         </section>
 
         <!-- Controls -->
         <section class="controls">
-            <div class="income-setter">
-                <input id="income-input" type="number" placeholder="Enter total income" />
-                <button id="set-income">Set Income</button>
-            </div>
-
             <div class="transaction-control">
-                <button id="add-transaction">+ Add Transaction</button>
+                <button id="add-transaction" class="btn primary">+ Add Transaction</button>
             </div>
 
             <div class="filter">
                 <input id="start-date" type="date" />
                 <input id="end-date" type="date" />
-                <button id="apply-filter">Filter</button>
-                <button id="clear-filter">Clear</button>
+                <button id="apply-filter" class="btn">Apply</button>
+                <button id="clear-filter" class="btn">Clear</button>
             </div>
         </section>
 
         <!-- Transactions Table -->
         <section class="table-section">
             <h2>Transactions</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Date</th>
-                        <th>Category</th>
-                        <th>Amount</th>
-                        <th>Type</th>
-                        <th>Actions</th>
-                    </tr>
-                </thead>
-                <tbody id="transaction-body"></tbody>
-            </table>
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Category</th>
+                            <th class="right">Amount</th>
+                            <th>Type</th>
+                            <th class="center">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="transaction-body"></tbody>
+                </table>
+            </div>
             <p id="no-data">No transactions yet. Add one!</p>
         </section>
     </div>
 
     <!-- Modal -->
-    <div id="modal" class="modal">
-        <div class="modal-content">
+    <div id="modal" class="modal" aria-hidden="true">
+        <div class="modal-content" role="dialog" aria-modal="true">
             <h3 id="modal-title">Add Transaction</h3>
             <form id="transaction-form">
                 <label>Date</label>
                 <input id="t-date" type="date" required />
-                <label>Category</label>
-                <input id="t-category" type="text" placeholder="e.g., Rent" required />
-                <label>Amount</label>
-                <input id="t-amount" type="number" required />
+
                 <label>Type</label>
                 <select id="t-type">
                     <option value="expense">Expense</option>
                     <option value="income">Income</option>
                 </select>
+
+                <label>Category</label>
+                <select id="t-category-select">
+                    <option value="Salary">Salary</option>
+                    <option value="Food">Food</option>
+                    <option value="Shopping">Shopping</option>
+                    <option value="Bills">Bills</option>
+                    <option value="Entertainment">Entertainment</option>
+                    <option value="Travel">Travel</option>
+                    <option value="Other">Other</option>
+                </select>
+                <input id="t-category-other" type="text" placeholder="Enter custom category"
+                    style="display:none; margin-top:8px;" />
+
+                <label>Amount</label>
+                <input id="t-amount" type="number" min="0" step="0.01" required />
+
                 <div class="modal-actions">
-                    <button type="button" id="cancel-modal">Cancel</button>
-                    <button type="submit">Save</button>
+                    <button type="button" id="cancel-modal" class="btn">Cancel</button>
+                    <button type="submit" class="btn primary">Save</button>
                 </div>
             </form>
         </div>
