@@ -58,9 +58,8 @@ h1{font-size:1.6rem;margin:0}
   border:none;
 }
 .btn.reset{
-  background:#fff0f1;
-  color:#b91c1c;
-  border:1px solid rgba(185,28,28,0.08);
+  background:#ef4444;
+  color:rgb(243, 241, 241);
 }
 
 /* summary cards */
