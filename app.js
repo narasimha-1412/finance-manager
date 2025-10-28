@@ -116,7 +116,7 @@ function renderTable(list = data.transactions) {
       tr.innerHTML = `
       <td>${t.date}</td>
       <td>${escapeHtml(t.category)}</td>
-      <td class="right">₹${formatNum(Number(t.amount))}</td>
+      <td>₹${formatNum(Number(t.amount))}</td>
       <td>${t.type}</td>
       <td class="center actions">
         <button class="edit" data-id="${t.id}">Edit</button>
