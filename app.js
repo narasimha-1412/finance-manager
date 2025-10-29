@@ -1,6 +1,8 @@
 const LS_KEY = "financeData";
 let data = { transactions: [] };
 let editId = null;
+let filters = { start: null, end: null, category: "" };
+let sortState = { column: null, order: null };
 
 /* ====== Initialization ====== */
 const totalIncomeEl = document.getElementById("total-income");
@@ -19,11 +21,15 @@ const tType = document.getElementById("t-type");
 const tCategorySelect = document.getElementById("t-category-select");
 const tCategoryOther = document.getElementById("t-category-other");
 const tAmount = document.getElementById("t-amount");
+const tDesc = document.getElementById("t-desc");
 
-const startDate = document.getElementById("start-date");
-const endDate = document.getElementById("end-date");
-const applyFilter = document.getElementById("apply-filter");
-const clearFilter = document.getElementById("clear-filter");
+const filterModal = document.getElementById("filter-modal");
+const openFilter = document.getElementById("open-filter");
+const cancelFilter = document.getElementById("cancel-filter");
+const filterForm = document.getElementById("filter-form");
+const filterStart = document.getElementById("filter-start");
+const filterEnd = document.getElementById("filter-end");
+const filterCategory = document.getElementById("filter-category");
 
 const resetBtn = document.getElementById("reset-data");
 const themeToggle = document.getElementById("theme-toggle");
@@ -107,15 +113,12 @@ function renderTable(list = data.transactions) {
   }
   noData.style.display = "none";
 
-  // sort newest first
-  list
-    .slice()
-    .sort((a, b) => new Date(b.date) - new Date(a.date))
-    .forEach((t) => {
-      const tr = document.createElement("tr");
-      tr.innerHTML = `
+  list.forEach((t) => {
+    const tr = document.createElement("tr");
+    tr.innerHTML = `
       <td>${t.date}</td>
       <td>${escapeHtml(t.category)}</td>
+      <td>${escapeHtml(t.description || "-")}</td>
       <td>₹${formatNum(Number(t.amount))}</td>
       <td>${t.type}</td>
       <td class="center actions">
@@ -123,8 +126,8 @@ function renderTable(list = data.transactions) {
         <button class="delete" data-id="${t.id}">Delete</button>
       </td>
     `;
-      tbody.appendChild(tr);
-    });
+    tbody.appendChild(tr);
+  });
 }
 
 function renderAll(list = data.transactions) {
@@ -151,6 +154,7 @@ function openModal(editData = null) {
       tCategoryOther.value = editData.category;
     }
     tAmount.value = editData.amount;
+    tDesc.value = editData.description || "";
     editId = editData.id;
   } else {
     document.getElementById("modal-title").textContent = "Add Transaction";
@@ -194,7 +198,9 @@ form.addEventListener("submit", (e) => {
     type: tType.value,
     category,
     amount: Number(tAmount.value),
+    description: tDesc.value.trim(),
   };
+
   if (editId) {
     const idx = data.transactions.findIndex((x) => x.id === editId);
     if (idx !== -1) data.transactions[idx] = obj;
@@ -223,31 +229,31 @@ tbody.addEventListener("click", (e) => {
 });
 
 /* ====== Filter ====== */
-applyFilter.addEventListener("click", () => {
-  const s = startDate.value ? new Date(startDate.value) : null;
-  const e = endDate.value ? new Date(endDate.value) : null;
-  if (!s && !e) return alert("Pick a start and/or end date to filter.");
-  const filtered = data.transactions.filter((t) => {
-    const d = new Date(t.date + "T00:00:00");
-    if (s && d < s) return false;
-    if (e) {
-      const dayEnd = new Date(e);
-      dayEnd.setHours(23, 59, 59, 999);
-      if (d > dayEnd) return false;
-    }
-    return true;
-  });
-  startDate.classList.add("active-filter");
-  endDate.classList.add("active-filter");
-  renderAll(filtered);
-});
-clearFilter.addEventListener("click", () => {
-  startDate.value = "";
-  endDate.value = "";
-  startDate.classList.remove("active-filter");
-  endDate.classList.remove("active-filter");
-  renderAll();
-});
+// applyFilter.addEventListener("click", () => {
+//   const s = startDate.value ? new Date(startDate.value) : null;
+//   const e = endDate.value ? new Date(endDate.value) : null;
+//   if (!s && !e) return alert("Pick a start and/or end date to filter.");
+//   const filtered = data.transactions.filter((t) => {
+//     const d = new Date(t.date + "T00:00:00");
+//     if (s && d < s) return false;
+//     if (e) {
+//       const dayEnd = new Date(e);
+//       dayEnd.setHours(23, 59, 59, 999);
+//       if (d > dayEnd) return false;
+//     }
+//     return true;
+//   });
+//   startDate.classList.add("active-filter");
+//   endDate.classList.add("active-filter");
+//   renderAll(filtered);
+// });
+// clearFilter.addEventListener("click", () => {
+//   startDate.value = "";
+//   endDate.value = "";
+//   startDate.classList.remove("active-filter");
+//   endDate.classList.remove("active-filter");
+//   renderAll();
+// });
 
 /* ====== Reset Data ====== */
 resetBtn.addEventListener("click", () => {
@@ -279,4 +285,132 @@ modal.addEventListener("click", (e) => {
   if (e.target === modal) closeModal();
 });
 
+/* ====== Filter Modal ====== */
+openFilter.addEventListener("click", () => {
+  filterModal.classList.add("show");
+});
+cancelFilter.addEventListener("click", () => {
+  filterModal.classList.remove("show");
+});
+filterModal.addEventListener("click", (e) => {
+  if (e.target === filterModal) filterModal.classList.remove("show");
+});
+
+filterForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+  filters.start = filterStart.value ? new Date(filterStart.value) : null;
+  filters.end = filterEnd.value ? new Date(filterEnd.value) : null;
+  filters.category = filterCategory.value;
+  applyFiltersAndSort();
+  filterModal.classList.remove("show");
+});
+
+document.getElementById("clear-filter").addEventListener("click", () => {
+  filters = { start: null, end: null, category: "" };
+  filterStart.value = "";
+  filterEnd.value = "";
+  filterCategory.value = "";
+  applyFiltersAndSort();
+  filterModal.classList.remove("show");
+});
+
+/* ====== Sorting ====== */
+const sortDateBtn = document.getElementById("sort-date");
+const sortAmountBtn = document.getElementById("sort-amount");
+
+sortDateBtn.addEventListener("click", () => handleSortClick("date"));
+sortAmountBtn.addEventListener("click", () => handleSortClick("amount"));
+
+function handleSortClick(col) {
+  if (sortState.column !== col) {
+    sortState = { column: col, order: "asc" };
+  } else if (sortState.order === "asc") {
+    sortState.order = "desc";
+  } else if (sortState.order === "desc") {
+    sortState = { column: null, order: null };
+  } else {
+    sortState.order = "asc";
+  }
+
+  updateSortIcons();
+  applyFiltersAndSort(); // always reload from localStorage
+}
+
+function updateSortIcons() {
+  const icons = { asc: "↑", desc: "↓", none: "⬍" };
+
+  // Handle date icon
+  if (sortState.column === "date") {
+    sortDateBtn.textContent = icons[sortState.order] || icons.none;
+  } else {
+    sortDateBtn.textContent = icons.none;
+  }
+
+  // Handle amount icon
+  if (sortState.column === "amount") {
+    sortAmountBtn.textContent = icons[sortState.order] || icons.none;
+  } else {
+    sortAmountBtn.textContent = icons.none;
+  }
+}
+
+function applyFiltersAndSort() {
+  let localData = { transactions: [] };
+  try {
+    const stored = localStorage.getItem(LS_KEY);
+    if (stored) {
+      const parsed = JSON.parse(stored);
+      if (parsed && Array.isArray(parsed.transactions)) {
+        localData = parsed;
+      }
+    }
+  } catch (err) {
+    console.warn("Error reading localStorage:", err);
+  }
+
+  let list = Array.isArray(localData.transactions)
+    ? [...localData.transactions]
+    : [];
+
+  // Filters
+  list = list.filter((t) => {
+    const d = new Date(t.date + "T00:00:00");
+    if (filters.start && d < filters.start) return false;
+    if (filters.end && d > filters.end) return false;
+    if (filters.category && t.category !== filters.category) return false;
+    return true;
+  });
+
+  // === Sorting ===
+  if (sortState.column && sortState.order) {
+    const dir = sortState.order === "asc" ? 1 : -1;
+
+    if (sortState.column === "date") {
+      list.sort((a, b) => {
+        const da = new Date(a.date + "T00:00:00");
+        const db = new Date(b.date + "T00:00:00");
+        return dir * (da - db);
+      });
+    } else if (sortState.column === "amount") {
+      list.sort((a, b) => dir * (a.amount - b.amount));
+    }
+  } else {
+    // ✅ Neutral state — restore original order (as stored)
+    list.sort((a, b) => {
+      const ida = Number(a.id);
+      const idb = Number(b.id);
+      return ida - idb; // oldest first (original insertion order)
+    });
+  }
+
+  renderAll(list);
+}
+
+function resetSortState() {
+  sortState = { column: null, order: null };
+  updateSortIcons();
+  applyFiltersAndSort(); // re-render with neutral data
+}
+
 loadFromLocal();
+resetSortState(); // ⬍ icon visible but no sorting applied

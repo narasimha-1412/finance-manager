@@ -128,3 +128,21 @@ tr:hover td{background:rgba(0,0,0,0.02)}
 
 /* filter active highlight */
 input.active-filter{outline:2px solid rgba(14,165,233,0.18);box-shadow:0 0 0 4px rgba(14,165,233,0.06)}
+
+
+.sort-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  color: var(--muted);
+  margin-left: 4px;
+  transition: color 0.2s ease;
+}
+.sort-btn:hover {
+  color: var(--accent);
+}
+.filter-control {
+  display: flex;
+  align-items: center;
+}
