@@ -3,12 +3,14 @@ let data = { transactions: [] };
 let editId = null;
 let filters = { start: null, end: null, category: "" };
 let sortState = { column: null, order: null };
+let currentPage = 1;
+const ITEMS_PER_PAGE = 10;
 
 /* ====== Initialization ====== */
 const totalIncomeEl = document.getElementById("total-income");
 const totalExpenseEl = document.getElementById("total-expense");
 const incomeLeftEl = document.getElementById("income-left");
-const savingRateEl = document.getElementById("saving-rate");
+const expenseRatioEl = document.getElementById("expense-ratio");
 const tbody = document.getElementById("transaction-body");
 const noData = document.getElementById("no-data");
 
@@ -81,18 +83,47 @@ function calcTotals(list = data.transactions) {
     .filter((t) => t.type === "expense")
     .reduce((s, x) => s + Number(x.amount || 0), 0);
   const incomeLeft = totalIncome - totalExpense;
-  const savingRate =
-    totalIncome > 0 ? Math.round((incomeLeft / totalIncome) * 100) : 0;
-  return { totalIncome, totalExpense, incomeLeft, savingRate };
+  const expenseRatio =
+    totalIncome > 0 ? Math.round((totalExpense / totalIncome) * 100) : 0;
+  return { totalIncome, totalExpense, incomeLeft, expenseRatio };
 }
 
 function renderSummary(list) {
-  const { totalIncome, totalExpense, incomeLeft, savingRate } =
+  const { totalIncome, totalExpense, incomeLeft, expenseRatio } =
     calcTotals(list);
   totalIncomeEl.textContent = `₹${formatNum(totalIncome)}`;
   totalExpenseEl.textContent = `₹${formatNum(totalExpense)}`;
   incomeLeftEl.textContent = `₹${formatNum(incomeLeft)}`;
-  savingRateEl.textContent = `${savingRate}%`;
+  expenseRatioEl.textContent = `${expenseRatio}%`;
+}
+
+function renderPagination(totalPages) {
+  const paginationEl = document.getElementById("pagination");
+  const pageNumsEl = document.getElementById("page-numbers");
+  if (!paginationEl) return;
+
+  pageNumsEl.innerHTML = "";
+
+  // Hide pagination if not needed
+  if (totalPages <= 1) {
+    paginationEl.style.display = "none";
+    return;
+  }
+  paginationEl.style.display = "flex";
+
+  for (let i = 1; i <= totalPages; i++) {
+    const btn = document.createElement("button");
+    btn.textContent = i;
+    btn.className = "btn" + (i === currentPage ? " active-page" : "");
+    btn.addEventListener("click", () => {
+      currentPage = i;
+      applyFiltersAndSort();
+    });
+    pageNumsEl.appendChild(btn);
+  }
+
+  document.getElementById("prev-page").disabled = currentPage === 1;
+  document.getElementById("next-page").disabled = currentPage === totalPages;
 }
 
 function formatNum(n) {
@@ -117,10 +148,10 @@ function renderTable(list = data.transactions) {
     const tr = document.createElement("tr");
     tr.innerHTML = `
       <td>${t.date}</td>
-      <td>${escapeHtml(t.category)}</td>
       <td>${escapeHtml(t.description || "-")}</td>
+      <td>${escapeHtml(t.category)}</td>
+      <td>${t.type === "income" ? "Credit" : "Expense"}</td>
       <td>₹${formatNum(Number(t.amount))}</td>
-      <td>${t.type}</td>
       <td class="center actions">
         <button class="edit" data-id="${t.id}">Edit</button>
         <button class="delete" data-id="${t.id}">Delete</button>
@@ -131,8 +162,20 @@ function renderTable(list = data.transactions) {
 }
 
 function renderAll(list = data.transactions) {
-  renderTable(list);
+  // Calculate pagination range
+  const totalItems = list.length;
+  const totalPages = Math.ceil(totalItems / ITEMS_PER_PAGE) || 1;
+
+  // Keep currentPage in valid range
+  if (currentPage > totalPages) currentPage = totalPages;
+  if (currentPage < 1) currentPage = 1;
+
+  const startIdx = (currentPage - 1) * ITEMS_PER_PAGE;
+  const paginatedList = list.slice(startIdx, startIdx + ITEMS_PER_PAGE);
+
+  renderTable(paginatedList);
   renderSummary(list);
+  renderPagination(totalPages);
 }
 
 /* ====== Modal / CRUD ====== */
@@ -257,10 +300,35 @@ tbody.addEventListener("click", (e) => {
 
 /* ====== Reset Data ====== */
 resetBtn.addEventListener("click", () => {
-  if (!confirm("This will clear all saved data. Proceed?")) return;
+  const choice = confirm(
+    "This will clear all saved data.\n\nClick OK to restore from default data.json seed, or Cancel to start fresh."
+  );
   localStorage.removeItem(LS_KEY);
-  data = { transactions: [] };
-  renderAll();
+
+  if (choice) {
+    // Restore from JSON seed
+    fetch("data.json")
+      .then((r) => {
+        if (!r.ok) throw new Error("no seed file");
+        return r.json();
+      })
+      .then((json) => {
+        if (json && Array.isArray(json.transactions)) {
+          data.transactions = json.transactions;
+          saveLocal();
+        } else {
+          data.transactions = [];
+        }
+      })
+      .catch(() => {
+        data.transactions = [];
+      })
+      .finally(() => renderAll());
+  } else {
+    // Start with empty
+    data = { transactions: [] };
+    renderAll();
+  }
 });
 
 /* ====== Theme Toggle ====== */
@@ -301,6 +369,7 @@ filterForm.addEventListener("submit", (e) => {
   filters.start = filterStart.value ? new Date(filterStart.value) : null;
   filters.end = filterEnd.value ? new Date(filterEnd.value) : null;
   filters.category = filterCategory.value;
+  currentPage = 1;
   applyFiltersAndSort();
   filterModal.classList.remove("show");
 });
@@ -333,6 +402,7 @@ function handleSortClick(col) {
   }
 
   updateSortIcons();
+  currentPage = 1;
   applyFiltersAndSort(); // always reload from localStorage
 }
 
@@ -395,11 +465,10 @@ function applyFiltersAndSort() {
       list.sort((a, b) => dir * (a.amount - b.amount));
     }
   } else {
-    // ✅ Neutral state — restore original order (as stored)
     list.sort((a, b) => {
       const ida = Number(a.id);
       const idb = Number(b.id);
-      return ida - idb; // oldest first (original insertion order)
+      return idb - ida;
     });
   }
 
@@ -411,6 +480,18 @@ function resetSortState() {
   updateSortIcons();
   applyFiltersAndSort(); // re-render with neutral data
 }
+
+document.getElementById("prev-page").addEventListener("click", () => {
+  if (currentPage > 1) {
+    currentPage--;
+    applyFiltersAndSort();
+  }
+});
+
+document.getElementById("next-page").addEventListener("click", () => {
+  currentPage++;
+  applyFiltersAndSort();
+});
 
 loadFromLocal();
 resetSortState(); // ⬍ icon visible but no sorting applied

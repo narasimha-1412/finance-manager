@@ -146,3 +146,23 @@ input.active-filter{outline:2px solid rgba(14,165,233,0.18);box-shadow:0 0 0 4px
   display: flex;
   align-items: center;
 }
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.pagination button {
+  padding: 6px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.pagination .active-page {
+  background: var(--primary);
+  color: white;
+  border: none;
+}

@@ -28,16 +28,16 @@
                 <h2 id="total-income">₹0</h2>
             </div>
             <div class="card">
-                <p class="label">Total Expense</p>
+                <p class="label">Total Expenses</p>
                 <h2 id="total-expense">₹0</h2>
             </div>
             <div class="card">
-                <p class="label">Income Left</p>
+                <p class="label">Net Balance</p>
                 <h2 id="income-left">₹0</h2>
             </div>
             <div class="card">
-                <p class="label">Saving Rate</p>
-                <h2 id="saving-rate">0%</h2>
+                <p class="label">Expense-to-Income Ratio</p>
+                <h2 id="expense-ratio">0%</h2>
             </div>
         </section>
 
@@ -66,28 +66,27 @@
             <div class="table-wrap">
                 <table>
                     <thead>
-                        <!-- <tr>
-                            <th>Date</th>
-                            <th>Category</th>
-                            <th>Amount</th>
-                            <th>Type</th>
-                            <th class="center">Actions</th>
-                        </tr> -->
                         <tr>
                             <th>Date <button id="sort-date" class="sort-btn">⬍</button></th>
-                            <th>Category</th>
                             <th>Description</th>
-                            <th>Amount <button id="sort-amount" class="sort-btn">⬍</button></th>
+                            <th>Category</th>
                             <th>Type</th>
+                            <th>Amount <button id="sort-amount" class="sort-btn">⬍</button></th>
                             <th class="center">Actions</th>
                         </tr>
-
-
                     </thead>
                     <tbody id="transaction-body"></tbody>
                 </table>
 
             </div>
+
+            <!-- Pagination Controls -->
+            <div id="pagination" class="pagination">
+                <button id="prev-page" class="btn">Prev</button>
+                <span id="page-numbers"></span>
+                <button id="next-page" class="btn">Next</button>
+            </div>
+
             <p id="no-data">No transactions yet. Add one!</p>
         </section>
     </div>
@@ -103,7 +102,7 @@
                 <label for="t-type">Type</label>
                 <select id="t-type">
                     <option value="expense">Expense</option>
-                    <option value="income">Income</option>
+                    <option value="income">Credit</option>
                 </select>
             
                 <label for="t-category-select">Category</label>
