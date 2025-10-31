@@ -75,7 +75,13 @@ h1{font-size:1.6rem;margin:0}
   padding:18px;
   box-shadow:var(--shadow);
 }
-.card .label{font-size:.9rem;color:var(--muted);margin:0}
+.card .label {
+  font-size: .9rem;
+  color: var(--text); /* was var(--muted) */
+  margin: 0;
+  font-weight: 600; /* optional: makes it slightly bolder like a heading */
+}
+
 .card h2{margin:8px 0 0 0;font-size:1.35rem;color:var(--primary)}
 
 /* controls */
@@ -165,4 +171,21 @@ input.active-filter{outline:2px solid rgba(14,165,233,0.18);box-shadow:0 0 0 4px
   background: var(--primary);
   color: white;
   border: none;
+}
+
+/* ===== Dashboard Tooltip Enhancements ===== */
+.chartjs-tooltip {
+  opacity: 1 !important;
+  background: rgba(31, 41, 55, 0.9);
+  color: #f9fafb;
+  border-radius: 8px;
+  padding: 8px 12px;
+  pointer-events: none;
+  transition: all 0.1s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+  font-size: 0.9rem;
+}
+
+canvas {
+  cursor: crosshair;
 }

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financial Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <h1>Financial Dashboard</h1>
+            <button id="theme-toggle" class="btn primary">Toggle Theme</button>
+        </header>
+
+        <!-- Summary Cards -->
+        <section class="summary">
+            <div class="card">
+                <p class="label">Total Income</p>
+                <h2 id="totalIncome">₹0</h2>
+            </div>
+            <div class="card">
+                <p class="label">Total Expense</p>
+                <h2 id="totalExpense">₹0</h2>
+            </div>
+            <div class="card">
+                <p class="label">Net Balance</p>
+                <h2 id="netBalance">₹0</h2>
+            </div>
+            <div class="card">
+                <p class="label">Avg Monthly Savings</p>
+                <h2 id="avgSavings">₹0</h2>
+            </div>
+        </section>
+
+        <!-- Charts -->
+        <section class="table-section">
+            <h2>Monthly Income vs Expense</h2>
+            <canvas id="barChart"></canvas>
+        </section>
+
+        <section class="table-section">
+            <div class="chart-row"
+                style="display:grid;grid-template-columns:repeat(auto-fit,minmax(400px,1fr));gap:20px;">
+                <div>
+                    <h2>Expense Distribution by Category</h2>
+                    <canvas id="pieChart"></canvas>
+                </div>
+                <div>
+                    <h2>Balance Over Time</h2>
+                    <canvas id="lineChart"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <!-- Insights -->
+        <section class="summary" style="margin-top:24px;">
+            <div class="card">
+                <p class="label">Highest Expense Category</p>
+                <h2 id="topCategory">-</h2>
+            </div>
+            <div class="card">
+                <p class="label">Avg Monthly Saving</p>
+                <h2 id="insightSavings">₹0</h2>
+            </div>
+            <div class="card">
+                <p class="label">Total Transactions</p>
+                <h2 id="totalTransactions">0</h2>
+            </div>
+        </section>
+    </div>
+
+    <script src="dashboard.js"></script>
+</body>
+
+</html>
