@@ -126,9 +126,9 @@ tr:hover td{background:rgba(0,0,0,0.02)}
 .modal.show{display:flex}
 .modal-content{width:100%;max-width:420px;background:var(--card);border-radius:12px;padding:18px;box-shadow:var(--shadow)}
 .modal-content h3{margin:0 0 10px 0}
-.modal-content label{display:block;margin-top:8px;margin-bottom:6px;color:var(--muted)}
+.modal-content label{display:block;margin-top:8px;margin-bottom:6px;color:#000000}
 .modal-content input[type="text"], .modal-content input[type="date"], .modal-content input[type="number"], .modal-content select{
-  width:100%;padding:9px;border-radius:8px;border:1px solid rgba(16,24,40,0.06);background:transparent;
+  width:100%;padding:9px;border-radius:8px;border:1px solid #000000;background:transparent;
 }
 .modal-actions{display:flex;justify-content:flex-end;gap:8px;margin-top:12px}
 
@@ -189,3 +189,96 @@ input.active-filter{outline:2px solid rgba(14,165,233,0.18);box-shadow:0 0 0 4px
 canvas {
   cursor: crosshair;
 }
+
+/* === Dark Mode Form and Pagination Fix === */
+body.dark input,
+body.dark select,
+body.dark textarea {
+  color: #ffffff;
+  background-color: #0f1724; /* same as card background */
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+body.dark input::placeholder,
+body.dark textarea::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+body.dark label {
+  color: #e6eef8; /* make labels white */
+}
+
+body.dark .btn {
+  color: #ffffff; /* all buttons text white */
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+body.dark .btn.primary,
+body.dark .btn.reset,
+body.dark .btn.accent {
+  color: #ffffff;
+}
+
+/* Pagination buttons in dark mode */
+body.dark .pagination button {
+  color: #ffffff;
+  border: 1px solid #0f1724;
+}
+
+body.dark .pagination .active-page {
+  background: var(--primary);
+  color: #ffffff;
+}
+
+/* === Label & Input Styling === */
+
+/* Light mode - black text, black borders */
+label {
+  color: #000000;
+}
+
+input[type="text"],
+input[type="date"],
+input[type="number"],
+select,
+textarea {
+  border: 1px solid black;
+  color: #000000;
+  background-color: #ffffff;
+}
+
+/* Dark mode - white text, white borders */
+body.dark label {
+  color: #ffffff;
+}
+
+body.dark input[type="text"],
+body.dark input[type="date"],
+body.dark input[type="number"],
+body.dark select,
+body.dark textarea {
+  border: 1px solid #ffffff;
+  color: #ffffff;
+  background-color: #0f1724; /* same as dark card background */
+}
+
+/* Optional: make placeholder text readable in dark mode */
+body.dark input::placeholder,
+body.dark textarea::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* Keep dropdown arrows visible in dark mode */
+body.dark select {
+  background-color: #0f1724;
+  color: #ffffff;
+}
+
+/* Slightly rounded corners for a consistent look */
+input,
+select,
+textarea {
+  border-radius: 8px;
+  padding: 9px;
+}
+

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Finance Manager Dashboard</title>
+    <title>Finance Manager</title>
     <link rel="stylesheet" href="styles.css" />
 </head>
 
@@ -17,6 +17,7 @@
             </div>
             <div class="right">
                 <button id="reset-data" class="btn reset">Reset Data</button>
+                <button id="view-dashboard" class="btn primary">Dashboard</button>
                 <button id="theme-toggle" class="btn primary">Toggle Theme</button>
             </div>
         </header>
@@ -47,15 +48,9 @@
                 <button id="add-transaction" class="btn primary">+ Add Transaction</button>
             </div>
 
-            <!-- <div class="filter actions">
-                <input id="start-date" type="date" class="btn primary"/>
-                <input id="end-date" type="date" class="btn primary"/>
-                <button id="apply-filter" class="btn edit">Apply</button>
-                <button id="clear-filter" class="btn delete">Clear</button>
-            </div> -->
-
-            <div class="filter-control">
+            <div class="right ">
                 <button id="open-filter" class="btn primary edit">Filter</button>
+                <button type="button" id="clear-filter" class="btn reset delete">Clear</button>
             </div>
 
         </section>
@@ -123,10 +118,10 @@
                 <input id="t-desc" type="text" placeholder="Optional description" />
             
                 <label for="t-amount">Amount</label>
-                <input id="t-amount" type="number" min="0" step="0.01" required />
+                <input id="t-amount" type="number" min="0" step="0.01" required placeholder="type"/>
             
                 <div class="modal-actions">
-                    <button type="button" id="cancel-modal" class="btn">Cancel</button>
+                    <button type="button" id="cancel-modal" class="btn reset">Cancel</button>
                     <button type="submit" class="btn primary">Save</button>
                 </div>
             </form>
@@ -157,9 +152,8 @@
                 </select>
     
                 <div class="modal-actions">
-                    <button type="button" id="cancel-filter" class="btn">Cancel</button>
+                    <button type="button" id="cancel-filter" class="btn reset">Cancel</button>
                     <button type="submit" class="btn primary">Apply</button>
-                    <button type="button" id="clear-filter" class="btn delete">Clear</button>
                 </div>
             </form>
         </div>

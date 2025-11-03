@@ -251,7 +251,7 @@ form.addEventListener("submit", (e) => {
     data.transactions.push(obj);
   }
   saveLocal();
-  renderAll();
+  applyFiltersAndSort();
   closeModal();
 });
 
@@ -332,9 +332,20 @@ resetBtn.addEventListener("click", () => {
 });
 
 /* ====== Theme Toggle ====== */
+/* ====== Theme Toggle (Synced Across Pages) ====== */
 themeToggle.addEventListener("click", () => {
-  document.body.classList.toggle("dark");
+  const isDark = document.body.classList.toggle("dark");
+  localStorage.setItem("theme", isDark ? "dark" : "light");
 });
+
+// Apply saved theme on load
+const savedTheme = localStorage.getItem("theme");
+if (savedTheme === "dark") {
+  document.body.classList.add("dark");
+} else {
+  document.body.classList.remove("dark");
+  localStorage.setItem("theme", "light");
+}
 
 /* ====== Helpers ====== */
 function escapeHtml(s) {
@@ -491,6 +502,11 @@ document.getElementById("prev-page").addEventListener("click", () => {
 document.getElementById("next-page").addEventListener("click", () => {
   currentPage++;
   applyFiltersAndSort();
+});
+
+// ===== Open Dashboard =====
+document.getElementById("view-dashboard").addEventListener("click", () => {
+  window.location.href = "dashboard.html";
 });
 
 loadFromLocal();

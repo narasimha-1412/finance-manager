@@ -1,11 +1,8 @@
 // ===== Theme Toggle =====
 const themeToggle = document.getElementById("theme-toggle");
 themeToggle.addEventListener("click", async () => {
-  document.body.classList.toggle("dark");
-  localStorage.setItem(
-    "theme",
-    document.body.classList.contains("dark") ? "dark" : "light"
-  );
+  const isDark = document.body.classList.toggle("dark");
+  localStorage.setItem("theme", isDark ? "dark" : "light");
 
   const transactions = await loadTransactions();
   renderCharts(transactions); // re-render charts with updated colors
@@ -141,21 +138,39 @@ function renderCharts(transactions) {
       responsive: true,
       maintainAspectRatio: true,
       plugins: {
-        legend: { labels: { color: colors.text } },
-        tooltip: {
-          enabled: true,
-          backgroundColor: "#1f2937",
-          titleColor: "#ffffff",
-          bodyColor: "#e5e7eb",
-          borderColor: "#374151",
-          borderWidth: 1,
-          padding: 10,
-          displayColors: false,
-          callbacks: {
-            label: (c) => `${c.dataset.label}: ₹${c.parsed.y.toLocaleString()}`,
+        legend: {
+          labels: {
+            color: colors.text,
+            usePointStyle: true, // ✅ shows small color circle/box beside legend text
+            pointStyle: "rectRounded", // rounded box shape
           },
         },
+        tooltip: {
+          usePointStyle: true,
+          callbacks: {
+            labelPointStyle: function (context) {
+              return {
+                pointStyle: "rectRounded",
+                rotation: 0,
+                backgroundColor: context.dataset.backgroundColor,
+              };
+            },
+            label: function (context) {
+              return `${context.dataset.label}: ₹${context.formattedValue}`;
+            },
+          },
+          titleColor: colors.text,
+          bodyColor: colors.text,
+          backgroundColor: document.body.classList.contains("dark")
+            ? "rgba(15, 23, 36, 0.9)"
+            : "#ffffff",
+          borderColor: colors.grid,
+          borderWidth: 1,
+          padding: 10,
+          displayColors: true, // ✅ ensures color boxes appear
+        },
       },
+
       interaction: {
         mode: "nearest", // detect nearest point, not just x-axis
         intersect: false, // allow hover even if not directly on bar
@@ -255,4 +270,30 @@ function renderCharts(transactions) {
 loadTransactions().then((transactions) => {
   renderSummary(transactions);
   renderCharts(transactions);
+});
+
+// ===== Live Sync: Update Charts When Local Storage Changes =====
+window.addEventListener("storage", (event) => {
+  if (event.key === "financeData") {
+    loadTransactions().then((transactions) => {
+      renderSummary(transactions);
+      renderCharts(transactions);
+    });
+  }
+
+  // Optional: sync dark/light mode across open tabs
+  if (event.key === "theme") {
+    const newTheme = localStorage.getItem("theme");
+    if (newTheme === "dark") {
+      document.body.classList.add("dark");
+    } else {
+      document.body.classList.remove("dark");
+    }
+    loadTransactions().then((transactions) => renderCharts(transactions));
+  }
+});
+
+// ===== Back Button =====
+document.getElementById("back-btn").addEventListener("click", () => {
+  window.location.href = "index.html";
 });
