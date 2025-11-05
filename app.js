@@ -103,27 +103,75 @@ function renderPagination(totalPages) {
   if (!paginationEl) return;
 
   pageNumsEl.innerHTML = "";
-
-  // Hide pagination if not needed
-  if (totalPages <= 1) {
-    paginationEl.style.display = "none";
-    return;
-  }
   paginationEl.style.display = "flex";
 
-  for (let i = 1; i <= totalPages; i++) {
+  const createBtn = (page, text = page) => {
     const btn = document.createElement("button");
-    btn.textContent = i;
-    btn.className = "btn" + (i === currentPage ? " active-page" : "");
+    btn.textContent = text;
+    btn.className = "btn" + (page === currentPage ? " active-page" : "");
     btn.addEventListener("click", () => {
-      currentPage = i;
+      currentPage = page;
       applyFiltersAndSort();
     });
-    pageNumsEl.appendChild(btn);
+    return btn;
+  };
+
+  const addEllipsis = () => {
+    const span = document.createElement("span");
+    span.textContent = "...";
+    span.style.padding = "0 6px";
+    pageNumsEl.appendChild(span);
+  };
+
+  // --- Core Pagination Logic ---
+  if (totalPages <= 5) {
+    // Show all pages directly if few
+    for (let i = 1; i <= totalPages; i++) {
+      pageNumsEl.appendChild(createBtn(i));
+    }
+  } else {
+    if (currentPage <= 3) {
+      // Near start
+      for (let i = 1; i <= 3; i++) pageNumsEl.appendChild(createBtn(i));
+      addEllipsis();
+      pageNumsEl.appendChild(createBtn(totalPages));
+    } else if (currentPage >= totalPages - 2) {
+      // Near end
+      pageNumsEl.appendChild(createBtn(1));
+      addEllipsis();
+      for (let i = totalPages - 2; i <= totalPages; i++)
+        pageNumsEl.appendChild(createBtn(i));
+    } else {
+      // Middle pages
+      pageNumsEl.appendChild(createBtn(1));
+      addEllipsis();
+      for (let i = currentPage - 1; i <= currentPage + 1; i++)
+        pageNumsEl.appendChild(createBtn(i));
+      addEllipsis();
+      pageNumsEl.appendChild(createBtn(totalPages));
+    }
   }
 
-  document.getElementById("prev-page").disabled = currentPage === 1;
-  document.getElementById("next-page").disabled = currentPage === totalPages;
+  // --- Prev/Next Buttons ---
+  const prevBtn = document.getElementById("prev-page");
+  const nextBtn = document.getElementById("next-page");
+
+  prevBtn.disabled = currentPage === 1;
+  nextBtn.disabled = currentPage === totalPages;
+
+  prevBtn.onclick = () => {
+    if (currentPage > 1) {
+      currentPage -= 1;
+      applyFiltersAndSort();
+    }
+  };
+
+  nextBtn.onclick = () => {
+    if (currentPage < totalPages) {
+      currentPage += 1; // ✅ Fixed off-by-one skip bug
+      applyFiltersAndSort();
+    }
+  };
 }
 
 function formatNum(n) {
@@ -492,17 +540,17 @@ function resetSortState() {
   applyFiltersAndSort(); // re-render with neutral data
 }
 
-document.getElementById("prev-page").addEventListener("click", () => {
-  if (currentPage > 1) {
-    currentPage--;
-    applyFiltersAndSort();
-  }
-});
+// document.getElementById("prev-page").addEventListener("click", () => {
+//   if (currentPage > 1) {
+//     currentPage--;
+//     applyFiltersAndSort();
+//   }
+// });
 
-document.getElementById("next-page").addEventListener("click", () => {
-  currentPage++;
-  applyFiltersAndSort();
-});
+// document.getElementById("next-page").addEventListener("click", () => {
+//   currentPage++;
+//   applyFiltersAndSort();
+// });
 
 // ===== Open Dashboard =====
 document.getElementById("view-dashboard").addEventListener("click", () => {

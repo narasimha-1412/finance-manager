@@ -1,724 +1,1604 @@
 {
   "transactions": [
     {
-      "id": "1",
-      "date": "2023-01-05",
+      "id": 1,
+      "date": "2021-01-01",
       "type": "income",
       "category": "Salary",
-      "amount": 61805,
-      "description": "January salary"
+      "description": "Monthly salary credited",
+      "amount": 67414
     },
     {
-      "id": "2",
-      "date": "2023-01-10",
+      "id": 2,
+      "date": "2021-01-14",
+      "type": "expense",
+      "category": "Travel",
+      "description": "Travel expense",
+      "amount": 2465
+    },
+    {
+      "id": 3,
+      "date": "2021-01-11",
+      "type": "expense",
+      "category": "Bills",
+      "description": "Bills expense",
+      "amount": 4840
+    },
+    {
+      "id": 4,
+      "date": "2021-01-13",
       "type": "expense",
       "category": "Food",
-      "amount": 22673,
-      "description": "Groceries"
+      "description": "Food expense",
+      "amount": 4951
     },
     {
-      "id": "3",
+      "id": 5,
+      "date": "2021-02-01",
+      "type": "income",
+      "category": "Salary",
+      "description": "Monthly salary credited",
+      "amount": 58626
+    },
+    {
+      "id": 6,
+      "date": "2021-02-05",
+      "type": "expense",
+      "category": "Other",
+      "description": "Other expense",
+      "amount": 1535
+    },
+    {
+      "id": 7,
+      "date": "2021-02-22",
+      "type": "expense",
+      "category": "Rent",
+      "description": "Rent expense",
+      "amount": 2674
+    },
+    {
+      "id": 8,
+      "date": "2021-02-04",
+      "type": "expense",
+      "category": "Shopping",
+      "description": "Shopping expense",
+      "amount": 2314
+    },
+    {
+      "id": 9,
+      "date": "2021-02-14",
+      "type": "expense",
+      "category": "Food",
+      "description": "Food expense",
+      "amount": 2355
+    },
+    {
+      "id": 10,
+      "date": "2021-02-14",
+      "type": "expense",
+      "category": "Health",
+      "description": "Health expense",
+      "amount": 2186
+    },
+    {
+      "id": 11,
+      "date": "2021-03-01",
+      "type": "income",
+      "category": "Salary",
+      "description": "Monthly salary credited",
+      "amount": 64139
+    },
+    {
+      "id": 12,
+      "date": "2021-03-19",
+      "type": "expense",
+      "category": "Education",
+      "description": "Education expense",
+      "amount": 2186
+    },
+    {
+      "id": 13,
+      "date": "2021-03-02",
+      "type": "expense",
+      "category": "Rent",
+      "description": "Rent expense",
+      "amount": 2076
+    },
+    {
+      "id": 14,
+      "date": "2021-03-14",
+      "type": "expense",
+      "category": "Groceries",
+      "description": "Groceries expense",
+      "amount": 1342
+    },
+    {
+      "id": 15,
+      "date": "2021-03-03",
+      "type": "expense",
+      "category": "Travel",
+      "description": "Travel expense",
+      "amount": 3606
+    },
+    {
+      "id": 16,
+      "date": "2021-04-01",
+      "type": "income",
+      "category": "Salary",
+      "description": "Monthly salary credited",
+      "amount": 68103
+    },
+    {
+      "id": 17,
+      "date": "2021-04-14",
+      "type": "expense",
+      "category": "Rent",
+      "description": "Rent expense",
+      "amount": 4435
+    },
+    {
+      "id": 18,
+      "date": "2021-04-02",
+      "type": "expense",
+      "category": "Health",
+      "description": "Health expense",
+      "amount": 3025
+    },
+    {
+      "id": 19,
+      "date": "2021-04-06",
+      "type": "expense",
+      "category": "Shopping",
+      "description": "Shopping expense",
+      "amount": 3312
+    },
+    {
+      "id": 20,
+      "date": "2021-05-01",
+      "type": "income",
+      "category": "Salary",
+      "description": "Monthly salary credited",
+      "amount": 60650
+    },
+    {
+      "id": 21,
+      "date": "2021-05-07",
+      "type": "expense",
+      "category": "Shopping",
+      "description": "Shopping expense",
+      "amount": 3073
+    },
+    {
+      "id": 22,
+      "date": "2021-05-27",
+      "type": "expense",
+      "category": "Travel",
+      "description": "Travel expense",
+      "amount": 2525
+    },
+    {
+      "id": 23,
+      "date": "2021-05-09",
+      "type": "expense",
+      "category": "Food",
+      "description": "Food expense",
+      "amount": 2287
+    },
+    {
+      "id": 24,
+      "date": "2021-05-15",
+      "type": "expense",
+      "category": "Rent",
+      "description": "Rent expense",
+      "amount": 2878
+    },
+    {
+      "id": 25,
+      "date": "2021-06-01",
+      "type": "income",
+      "category": "Salary",
+      "description": "Monthly salary credited",
+      "amount": 62172
+    },
+    {
+      "id": 26,
+      "date": "2021-06-12",
+      "type": "expense",
+      "category": "Health",
+      "description": "Health expense",
+      "amount": 3418
+    },
+    {
+      "id": 27,
+      "date": "2021-06-15",
+      "type": "expense",
+      "category": "Food",
+      "description": "Food expense",
+      "amount": 1845
+    },
+    {
+      "id": 28,
+      "date": "2021-06-26",
+      "type": "expense",
+      "category": "Travel",
+      "description": "Travel expense",
+      "amount": 4633
+    },
+    {
+      "id": 29,
+      "date": "2021-07-01",
+      "type": "income",
+      "category": "Salary",
+      "description": "Monthly salary credited",
+      "amount": 59798
+    },
+    {
+      "id": 30,
+      "date": "2021-07-03",
+      "type": "expense",
+      "category": "Travel",
+      "description": "Travel expense",
+      "amount": 1908
+    },
+    {
+      "id": 31,
+      "date": "2021-07-06",
+      "type": "expense",
+      "category": "Health",
+      "description": "Health expense",
+      "amount": 3368
+    },
+    {
+      "id": 32,
+      "date": "2021-07-23",
+      "type": "expense",
+      "category": "Bills",
+      "description": "Bills expense",
+      "amount": 3743
+    },
+    {
+      "id": 33,
+      "date": "2021-08-01",
+      "type": "income",
+      "category": "Salary",
+      "description": "Monthly salary credited",
+      "amount": 68815
+    },
+    {
+      "id": 34,
+      "date": "2021-08-15",
+      "type": "expense",
+      "category": "Bills",
+      "description": "Bills expense",
+      "amount": 2085
+    },
+    {
+      "id": 35,
+      "date": "2021-08-08",
+      "type": "expense",
+      "category": "Bills",
+      "description": "Bills expense",
+      "amount": 1842
+    },
+    {
+      "id": 36,
+      "date": "2021-08-16",
+      "type": "expense",
+      "category": "Bills",
+      "description": "Bills expense",
+      "amount": 2185
+    },
+    {
+      "id": 37,
+      "date": "2021-08-05",
+      "type": "expense",
+      "category": "Bills",
+      "description": "Bills expense",
+      "amount": 3640
+    },
+    {
+      "id": 38,
+      "date": "2021-09-01",
+      "type": "income",
+      "category": "Salary",
+      "description": "Monthly salary credited",
+      "amount": 67241
+    },
+    {
+      "id": 39,
+      "date": "2021-09-21",
+      "type": "expense",
+      "category": "Shopping",
+      "description": "Shopping expense",
+      "amount": 2907
+    },
+    {
+      "id": 40,
+      "date": "2021-09-12",
+      "type": "expense",
+      "category": "Rent",
+      "description": "Rent expense",
+      "amount": 2761
+    },
+    {
+      "id": 41,
+      "date": "2021-09-11",
+      "type": "expense",
+      "category": "Travel",
+      "description": "Travel expense",
+      "amount": 3443
+    },
+    {
+      "id": 42,
+      "date": "2021-10-01",
+      "type": "income",
+      "category": "Salary",
+      "description": "Monthly salary credited",
+      "amount": 58753
+    },
+    {
+      "id": 43,
+      "date": "2021-10-26",
+      "type": "expense",
+      "category": "Food",
+      "description": "Food expense",
+      "amount": 1255
+    },
+    {
+      "id": 44,
+      "date": "2021-10-09",
+      "type": "expense",
+      "category": "Health",
+      "description": "Health expense",
+      "amount": 1292
+    },
+    {
+      "id": 45,
+      "date": "2021-10-04",
+      "type": "expense",
+      "category": "Food",
+      "description": "Food expense",
+      "amount": 1864
+    },
+    {
+      "id": 46,
+      "date": "2021-10-20",
+      "type": "expense",
+      "category": "Travel",
+      "description": "Travel expense",
+      "amount": 2258
+    },
+    {
+      "id": 47,
+      "date": "2021-10-04",
+      "type": "expense",
+      "category": "Entertainment",
+      "description": "Entertainment expense",
+      "amount": 852
+    },
+    {
+      "id": 48,
+      "date": "2021-11-01",
+      "type": "income",
+      "category": "Salary",
+      "description": "Monthly salary credited",
+      "amount": 58408
+    },
+    {
+      "id": 49,
+      "date": "2021-11-15",
+      "type": "expense",
+      "category": "Food",
+      "description": "Food expense",
+      "amount": 1948
+    },
+    {
+      "id": 50,
+      "date": "2021-11-08",
+      "type": "expense",
+      "category": "Travel",
+      "description": "Travel expense",
+      "amount": 3053
+    },
+    {
+      "id": 51,
+      "date": "2021-11-22",
+      "type": "expense",
+      "category": "Bills",
+      "description": "Bills expense",
+      "amount": 4075
+    },
+    {
+      "id": 52,
+      "date": "2021-12-01",
+      "type": "income",
+      "category": "Salary",
+      "description": "Monthly salary credited",
+      "amount": 63283
+    },
+    {
+      "id": 53,
+      "date": "2021-12-04",
+      "type": "expense",
+      "category": "Shopping",
+      "description": "Shopping expense",
+      "amount": 3628
+    },
+    {
+      "id": 54,
+      "date": "2021-12-22",
+      "type": "expense",
+      "category": "Travel",
+      "description": "Travel expense",
+      "amount": 3283
+    },
+    {
+      "id": 55,
+      "date": "2021-12-15",
+      "type": "expense",
+      "category": "Other",
+      "description": "Other expense",
+      "amount": 1688
+    },
+    {
+      "id": 56,
+      "date": "2021-12-22",
+      "type": "expense",
+      "category": "Groceries",
+      "description": "Groceries expense",
+      "amount": 2725
+    },
+    {
+      "id": 57,
+      "date": "2022-01-01",
+      "type": "income",
+      "category": "Salary",
+      "description": "Monthly salary credited",
+      "amount": 58005
+    },
+    {
+      "id": 58,
+      "date": "2022-01-04",
+      "type": "expense",
+      "category": "Shopping",
+      "description": "Shopping expense",
+      "amount": 1128
+    },
+    {
+      "id": 59,
+      "date": "2022-01-02",
+      "type": "expense",
+      "category": "Education",
+      "description": "Education expense",
+      "amount": 1715
+    },
+    {
+      "id": 60,
+      "date": "2022-01-10",
+      "type": "expense",
+      "category": "Other",
+      "description": "Other expense",
+      "amount": 1688
+    },
+    {
+      "id": 61,
+      "date": "2022-01-07",
+      "type": "expense",
+      "category": "Education",
+      "description": "Education expense",
+      "amount": 1935
+    },
+    {
+      "id": 62,
+      "date": "2022-02-01",
+      "type": "income",
+      "category": "Salary",
+      "description": "Monthly salary credited",
+      "amount": 70393
+    },
+    {
+      "id": 63,
+      "date": "2022-02-13",
+      "type": "expense",
+      "category": "Groceries",
+      "description": "Groceries expense",
+      "amount": 1510
+    },
+    {
+      "id": 64,
+      "date": "2022-02-21",
+      "type": "expense",
+      "category": "Shopping",
+      "description": "Shopping expense",
+      "amount": 3129
+    },
+    {
+      "id": 65,
+      "date": "2022-02-21",
+      "type": "expense",
+      "category": "Shopping",
+      "description": "Shopping expense",
+      "amount": 3329
+    },
+    {
+      "id": 66,
+      "date": "2022-02-14",
+      "type": "expense",
+      "category": "Rent",
+      "description": "Rent expense",
+      "amount": 1627
+    },
+    {
+      "id": 67,
+      "date": "2022-03-01",
+      "type": "income",
+      "category": "Salary",
+      "description": "Monthly salary credited",
+      "amount": 59198
+    },
+    {
+      "id": 68,
+      "date": "2022-03-03",
+      "type": "expense",
+      "category": "Other",
+      "description": "Other expense",
+      "amount": 1098
+    },
+    {
+      "id": 69,
+      "date": "2022-03-19",
+      "type": "expense",
+      "category": "Travel",
+      "description": "Travel expense",
+      "amount": 1852
+    },
+    {
+      "id": 70,
+      "date": "2022-03-26",
+      "type": "expense",
+      "category": "Entertainment",
+      "description": "Entertainment expense",
+      "amount": 1614
+    },
+    {
+      "id": 71,
+      "date": "2022-03-10",
+      "type": "expense",
+      "category": "Bills",
+      "description": "Bills expense",
+      "amount": 1223
+    },
+    {
+      "id": 72,
+      "date": "2022-03-06",
+      "type": "expense",
+      "category": "Other",
+      "description": "Other expense",
+      "amount": 2449
+    },
+    {
+      "id": 73,
+      "date": "2022-04-01",
+      "type": "income",
+      "category": "Salary",
+      "description": "Monthly salary credited",
+      "amount": 57892
+    },
+    {
+      "id": 74,
+      "date": "2022-04-26",
+      "type": "expense",
+      "category": "Health",
+      "description": "Health expense",
+      "amount": 1656
+    },
+    {
+      "id": 75,
+      "date": "2022-04-06",
+      "type": "expense",
+      "category": "Shopping",
+      "description": "Shopping expense",
+      "amount": 4002
+    },
+    {
+      "id": 76,
+      "date": "2022-04-02",
+      "type": "expense",
+      "category": "Entertainment",
+      "description": "Entertainment expense",
+      "amount": 2239
+    },
+    {
+      "id": 77,
+      "date": "2022-05-01",
+      "type": "income",
+      "category": "Salary",
+      "description": "Monthly salary credited",
+      "amount": 67150
+    },
+    {
+      "id": 78,
+      "date": "2022-05-11",
+      "type": "expense",
+      "category": "Bills",
+      "description": "Bills expense",
+      "amount": 1895
+    },
+    {
+      "id": 79,
+      "date": "2022-05-19",
+      "type": "expense",
+      "category": "Food",
+      "description": "Food expense",
+      "amount": 1565
+    },
+    {
+      "id": 80,
+      "date": "2022-05-24",
+      "type": "expense",
+      "category": "Food",
+      "description": "Food expense",
+      "amount": 2615
+    },
+    {
+      "id": 81,
+      "date": "2022-05-14",
+      "type": "expense",
+      "category": "Rent",
+      "description": "Rent expense",
+      "amount": 2280
+    },
+    {
+      "id": 82,
+      "date": "2022-05-02",
+      "type": "expense",
+      "category": "Bills",
+      "description": "Bills expense",
+      "amount": 2139
+    },
+    {
+      "id": 83,
+      "date": "2022-06-01",
+      "type": "income",
+      "category": "Salary",
+      "description": "Monthly salary credited",
+      "amount": 65656
+    },
+    {
+      "id": 84,
+      "date": "2022-06-11",
+      "type": "expense",
+      "category": "Education",
+      "description": "Education expense",
+      "amount": 2212
+    },
+    {
+      "id": 85,
+      "date": "2022-06-19",
+      "type": "expense",
+      "category": "Other",
+      "description": "Other expense",
+      "amount": 2843
+    },
+    {
+      "id": 86,
+      "date": "2022-06-09",
+      "type": "expense",
+      "category": "Other",
+      "description": "Other expense",
+      "amount": 3166
+    },
+    {
+      "id": 87,
+      "date": "2022-06-21",
+      "type": "expense",
+      "category": "Entertainment",
+      "description": "Entertainment expense",
+      "amount": 2135
+    },
+    {
+      "id": 88,
+      "date": "2022-07-01",
+      "type": "income",
+      "category": "Salary",
+      "description": "Monthly salary credited",
+      "amount": 61469
+    },
+    {
+      "id": 89,
+      "date": "2022-07-21",
+      "type": "expense",
+      "category": "Rent",
+      "description": "Rent expense",
+      "amount": 2233
+    },
+    {
+      "id": 90,
+      "date": "2022-07-08",
+      "type": "expense",
+      "category": "Travel",
+      "description": "Travel expense",
+      "amount": 2250
+    },
+    {
+      "id": 91,
+      "date": "2022-07-26",
+      "type": "expense",
+      "category": "Health",
+      "description": "Health expense",
+      "amount": 2030
+    },
+    {
+      "id": 92,
+      "date": "2022-07-23",
+      "type": "expense",
+      "category": "Rent",
+      "description": "Rent expense",
+      "amount": 2371
+    },
+    {
+      "id": 93,
+      "date": "2022-07-24",
+      "type": "expense",
+      "category": "Shopping",
+      "description": "Shopping expense",
+      "amount": 1808
+    },
+    {
+      "id": 94,
+      "date": "2022-08-01",
+      "type": "income",
+      "category": "Salary",
+      "description": "Monthly salary credited",
+      "amount": 66563
+    },
+    {
+      "id": 95,
+      "date": "2022-08-26",
+      "type": "expense",
+      "category": "Shopping",
+      "description": "Shopping expense",
+      "amount": 2305
+    },
+    {
+      "id": 96,
+      "date": "2022-08-04",
+      "type": "expense",
+      "category": "Shopping",
+      "description": "Shopping expense",
+      "amount": 1363
+    },
+    {
+      "id": 97,
+      "date": "2022-08-05",
+      "type": "expense",
+      "category": "Bills",
+      "description": "Bills expense",
+      "amount": 3006
+    },
+    {
+      "id": 98,
+      "date": "2022-08-04",
+      "type": "expense",
+      "category": "Food",
+      "description": "Food expense",
+      "amount": 3500
+    },
+    {
+      "id": 99,
+      "date": "2022-09-01",
+      "type": "income",
+      "category": "Salary",
+      "description": "Monthly salary credited",
+      "amount": 57512
+    },
+    {
+      "id": 100,
+      "date": "2022-09-12",
+      "type": "expense",
+      "category": "Education",
+      "description": "Education expense",
+      "amount": 2651
+    },
+    {
+      "id": 101,
+      "date": "2022-09-07",
+      "type": "expense",
+      "category": "Health",
+      "description": "Health expense",
+      "amount": 1915
+    },
+    {
+      "id": 102,
+      "date": "2022-09-03",
+      "type": "expense",
+      "category": "Travel",
+      "description": "Travel expense",
+      "amount": 1740
+    },
+    {
+      "id": 103,
+      "date": "2022-09-28",
+      "type": "expense",
+      "category": "Other",
+      "description": "Other expense",
+      "amount": 2460
+    },
+    {
+      "id": 104,
+      "date": "2022-09-12",
+      "type": "expense",
+      "category": "Education",
+      "description": "Education expense",
+      "amount": 1210
+    },
+    {
+      "id": 105,
+      "date": "2022-10-01",
+      "type": "income",
+      "category": "Salary",
+      "description": "Monthly salary credited",
+      "amount": 62141
+    },
+    {
+      "id": 106,
+      "date": "2022-10-08",
+      "type": "expense",
+      "category": "Shopping",
+      "description": "Shopping expense",
+      "amount": 2393
+    },
+    {
+      "id": 107,
+      "date": "2022-10-04",
+      "type": "expense",
+      "category": "Rent",
+      "description": "Rent expense",
+      "amount": 2251
+    },
+    {
+      "id": 108,
+      "date": "2022-10-09",
+      "type": "expense",
+      "category": "Rent",
+      "description": "Rent expense",
+      "amount": 1738
+    },
+    {
+      "id": 109,
+      "date": "2022-10-27",
+      "type": "expense",
+      "category": "Groceries",
+      "description": "Groceries expense",
+      "amount": 2597
+    },
+    {
+      "id": 110,
+      "date": "2022-10-24",
+      "type": "expense",
+      "category": "Food",
+      "description": "Food expense",
+      "amount": 1287
+    },
+    {
+      "id": 111,
+      "date": "2022-11-01",
+      "type": "income",
+      "category": "Salary",
+      "description": "Monthly salary credited",
+      "amount": 65347
+    },
+    {
+      "id": 112,
+      "date": "2022-11-07",
+      "type": "expense",
+      "category": "Education",
+      "description": "Education expense",
+      "amount": 3183
+    },
+    {
+      "id": 113,
+      "date": "2022-11-11",
+      "type": "expense",
+      "category": "Groceries",
+      "description": "Groceries expense",
+      "amount": 1538
+    },
+    {
+      "id": 114,
+      "date": "2022-11-09",
+      "type": "expense",
+      "category": "Travel",
+      "description": "Travel expense",
+      "amount": 2752
+    },
+    {
+      "id": 115,
+      "date": "2022-11-20",
+      "type": "expense",
+      "category": "Food",
+      "description": "Food expense",
+      "amount": 2346
+    },
+    {
+      "id": 116,
+      "date": "2022-11-13",
+      "type": "expense",
+      "category": "Health",
+      "description": "Health expense",
+      "amount": 2395
+    },
+    {
+      "id": 117,
+      "date": "2022-12-01",
+      "type": "income",
+      "category": "Salary",
+      "description": "Monthly salary credited",
+      "amount": 60941
+    },
+    {
+      "id": 118,
+      "date": "2022-12-18",
+      "type": "expense",
+      "category": "Other",
+      "description": "Other expense",
+      "amount": 4270
+    },
+    {
+      "id": 119,
+      "date": "2022-12-16",
+      "type": "expense",
+      "category": "Health",
+      "description": "Health expense",
+      "amount": 3188
+    },
+    {
+      "id": 120,
+      "date": "2022-12-26",
+      "type": "expense",
+      "category": "Food",
+      "description": "Food expense",
+      "amount": 4669
+    },
+    {
+      "id": 121,
+      "date": "2023-01-01",
+      "type": "income",
+      "category": "Salary",
+      "description": "Monthly salary credited",
+      "amount": 61744
+    },
+    {
+      "id": 122,
+      "date": "2023-01-04",
+      "type": "expense",
+      "category": "Groceries",
+      "description": "Groceries expense",
+      "amount": 1892
+    },
+    {
+      "id": 123,
+      "date": "2023-01-12",
+      "type": "expense",
+      "category": "Education",
+      "description": "Education expense",
+      "amount": 2770
+    },
+    {
+      "id": 124,
       "date": "2023-01-15",
       "type": "expense",
-      "category": "Bills",
-      "amount": 22043,
-      "description": "Electricity bill"
-    },
-    {
-      "id": "4",
-      "date": "2023-02-03",
-      "type": "income",
-      "category": "Freelance",
-      "amount": 32338,
-      "description": "Logo design"
-    },
-    {
-      "id": "5",
-      "date": "2023-02-07",
-      "type": "expense",
       "category": "Entertainment",
-      "amount": 24467,
-      "description": "Movies"
+      "description": "Entertainment expense",
+      "amount": 4462
     },
     {
-      "id": "6",
+      "id": 125,
+      "date": "2023-02-01",
+      "type": "income",
+      "category": "Salary",
+      "description": "Monthly salary credited",
+      "amount": 63887
+    },
+    {
+      "id": 126,
       "date": "2023-02-10",
       "type": "expense",
-      "category": "Food",
-      "amount": 23803,
-      "description": "Dinner out"
+      "category": "Entertainment",
+      "description": "Entertainment expense",
+      "amount": 2692
     },
     {
-      "id": "7",
-      "date": "2023-02-25",
-      "type": "income",
-      "category": "Salary",
-      "amount": 33058,
-      "description": "February salary"
+      "id": 127,
+      "date": "2023-02-04",
+      "type": "expense",
+      "category": "Education",
+      "description": "Education expense",
+      "amount": 1870
     },
     {
-      "id": "8",
-      "date": "2023-03-01",
+      "id": 128,
+      "date": "2023-02-15",
       "type": "expense",
       "category": "Shopping",
-      "amount": 22872,
-      "description": "Clothes"
+      "description": "Shopping expense",
+      "amount": 2565
     },
     {
-      "id": "9",
-      "date": "2023-03-12",
-      "type": "income",
-      "category": "Bonus",
-      "amount": 62364,
-      "description": "Quarterly bonus"
-    },
-    {
-      "id": "10",
-      "date": "2023-03-16",
+      "id": 129,
+      "date": "2023-02-23",
       "type": "expense",
-      "category": "Bills",
-      "amount": 20946,
-      "description": "Internet"
+      "category": "Groceries",
+      "description": "Groceries expense",
+      "amount": 1482
     },
     {
-      "id": "11",
-      "date": "2023-04-03",
+      "id": 130,
+      "date": "2023-02-03",
+      "type": "expense",
+      "category": "Travel",
+      "description": "Travel expense",
+      "amount": 1581
+    },
+    {
+      "id": 131,
+      "date": "2023-03-01",
       "type": "income",
       "category": "Salary",
-      "amount": 61917,
-      "description": "April salary"
+      "description": "Monthly salary credited",
+      "amount": 59609
     },
     {
-      "id": "12",
-      "date": "2023-04-05",
+      "id": 132,
+      "date": "2023-03-24",
       "type": "expense",
-      "category": "Food",
-      "amount": 24316,
-      "description": "Groceries"
+      "category": "Health",
+      "description": "Health expense",
+      "amount": 1622
     },
     {
-      "id": "13",
-      "date": "2023-04-18",
+      "id": 133,
+      "date": "2023-03-22",
       "type": "expense",
-      "category": "Bills",
-      "amount": 26753,
-      "description": "Mobile bill"
+      "category": "Education",
+      "description": "Education expense",
+      "amount": 1639
     },
     {
-      "id": "14",
+      "id": 134,
+      "date": "2023-03-17",
+      "type": "expense",
+      "category": "Travel",
+      "description": "Travel expense",
+      "amount": 2842
+    },
+    {
+      "id": 135,
+      "date": "2023-03-25",
+      "type": "expense",
+      "category": "Shopping",
+      "description": "Shopping expense",
+      "amount": 1088
+    },
+    {
+      "id": 136,
+      "date": "2023-04-01",
+      "type": "income",
+      "category": "Salary",
+      "description": "Monthly salary credited",
+      "amount": 73572
+    },
+    {
+      "id": 137,
+      "date": "2023-04-10",
+      "type": "expense",
+      "category": "Rent",
+      "description": "Rent expense",
+      "amount": 3862
+    },
+    {
+      "id": 138,
+      "date": "2023-04-13",
+      "type": "expense",
+      "category": "Travel",
+      "description": "Travel expense",
+      "amount": 1403
+    },
+    {
+      "id": 139,
+      "date": "2023-04-08",
+      "type": "expense",
+      "category": "Other",
+      "description": "Other expense",
+      "amount": 2719
+    },
+    {
+      "id": 140,
+      "date": "2023-04-16",
+      "type": "expense",
+      "category": "Groceries",
+      "description": "Groceries expense",
+      "amount": 3157
+    },
+    {
+      "id": 141,
+      "date": "2023-05-01",
+      "type": "income",
+      "category": "Salary",
+      "description": "Monthly salary credited",
+      "amount": 68822
+    },
+    {
+      "id": 142,
+      "date": "2023-05-20",
+      "type": "expense",
+      "category": "Groceries",
+      "description": "Groceries expense",
+      "amount": 4459
+    },
+    {
+      "id": 143,
+      "date": "2023-05-12",
+      "type": "expense",
+      "category": "Groceries",
+      "description": "Groceries expense",
+      "amount": 3067
+    },
+    {
+      "id": 144,
       "date": "2023-05-06",
       "type": "expense",
-      "category": "Entertainment",
-      "amount": 22207,
-      "description": "Concert tickets"
+      "category": "Rent",
+      "description": "Rent expense",
+      "amount": 3939
     },
     {
-      "id": "15",
-      "date": "2023-05-10",
+      "id": 145,
+      "date": "2023-06-01",
       "type": "income",
       "category": "Salary",
-      "amount": 64552,
-      "description": "May salary"
+      "description": "Monthly salary credited",
+      "amount": 65919
     },
     {
-      "id": "16",
-      "date": "2023-05-19",
-      "type": "expense",
-      "category": "Travel",
-      "amount": 21134,
-      "description": "Weekend trip"
-    },
-    {
-      "id": "17",
-      "date": "2023-06-02",
-      "type": "income",
-      "category": "Dividends",
-      "amount": 61941,
-      "description": "Stock payout"
-    },
-    {
-      "id": "18",
-      "date": "2023-06-08",
+      "id": 146,
+      "date": "2023-06-11",
       "type": "expense",
       "category": "Food",
-      "amount": 24080,
-      "description": "Lunches"
+      "description": "Food expense",
+      "amount": 3230
     },
     {
-      "id": "19",
-      "date": "2023-06-15",
+      "id": 147,
+      "date": "2023-06-05",
       "type": "expense",
-      "category": "Bills",
-      "amount": 24921,
-      "description": "Water + electricity"
+      "category": "Other",
+      "description": "Other expense",
+      "amount": 4006
     },
     {
-      "id": "20",
-      "date": "2023-07-04",
+      "id": 148,
+      "date": "2023-06-09",
+      "type": "expense",
+      "category": "Education",
+      "description": "Education expense",
+      "amount": 2043
+    },
+    {
+      "id": 149,
+      "date": "2023-07-01",
       "type": "income",
       "category": "Salary",
-      "amount": 59741,
-      "description": "July salary"
+      "description": "Monthly salary credited",
+      "amount": 63558
     },
     {
-      "id": "21",
-      "date": "2023-07-10",
+      "id": 150,
+      "date": "2023-07-09",
       "type": "expense",
-      "category": "Shopping",
-      "amount": 21765,
-      "description": "Shoes and clothes"
+      "category": "Groceries",
+      "description": "Groceries expense",
+      "amount": 3804
     },
     {
-      "id": "22",
-      "date": "2023-07-20",
+      "id": 151,
+      "date": "2023-07-18",
       "type": "expense",
-      "category": "Travel",
-      "amount": 22645,
-      "description": "Weekend getaway"
+      "category": "Education",
+      "description": "Education expense",
+      "amount": 4372
     },
     {
-      "id": "23",
+      "id": 152,
+      "date": "2023-07-03",
+      "type": "expense",
+      "category": "Entertainment",
+      "description": "Entertainment expense",
+      "amount": 4339
+    },
+    {
+      "id": 153,
       "date": "2023-08-01",
       "type": "income",
-      "category": "Freelance",
-      "amount": 61551,
-      "description": "Website project"
-    },
-    {
-      "id": "24",
-      "date": "2023-08-06",
-      "type": "expense",
-      "category": "Food",
-      "amount": 20297,
-      "description": "Groceries"
-    },
-    {
-      "id": "25",
-      "date": "2023-08-20",
-      "type": "expense",
-      "category": "Bills",
-      "amount": 21431,
-      "description": "Gas bill"
-    },
-    {
-      "id": "26",
-      "date": "2023-09-04",
-      "type": "income",
       "category": "Salary",
-      "amount": 63172,
-      "description": "September salary"
+      "description": "Monthly salary credited",
+      "amount": 69083
     },
     {
-      "id": "27",
-      "date": "2023-09-10",
+      "id": 154,
+      "date": "2023-08-05",
       "type": "expense",
       "category": "Entertainment",
-      "amount": 25522,
-      "description": "Games"
+      "description": "Entertainment expense",
+      "amount": 3153
     },
     {
-      "id": "28",
+      "id": 155,
+      "date": "2023-08-05",
+      "type": "expense",
+      "category": "Groceries",
+      "description": "Groceries expense",
+      "amount": 1668
+    },
+    {
+      "id": 156,
+      "date": "2023-08-02",
+      "type": "expense",
+      "category": "Shopping",
+      "description": "Shopping expense",
+      "amount": 2375
+    },
+    {
+      "id": 157,
+      "date": "2023-08-07",
+      "type": "expense",
+      "category": "Education",
+      "description": "Education expense",
+      "amount": 2802
+    },
+    {
+      "id": 158,
+      "date": "2023-08-02",
+      "type": "expense",
+      "category": "Groceries",
+      "description": "Groceries expense",
+      "amount": 1915
+    },
+    {
+      "id": 159,
+      "date": "2023-09-01",
+      "type": "income",
+      "category": "Salary",
+      "description": "Monthly salary credited",
+      "amount": 67059
+    },
+    {
+      "id": 160,
+      "date": "2023-09-19",
+      "type": "expense",
+      "category": "Food",
+      "description": "Food expense",
+      "amount": 4443
+    },
+    {
+      "id": 161,
+      "date": "2023-09-11",
+      "type": "expense",
+      "category": "Education",
+      "description": "Education expense",
+      "amount": 3899
+    },
+    {
+      "id": 162,
       "date": "2023-09-18",
       "type": "expense",
-      "category": "Travel",
-      "amount": 25086,
-      "description": "Business trip"
+      "category": "Groceries",
+      "description": "Groceries expense",
+      "amount": 2149
     },
     {
-      "id": "29",
-      "date": "2023-10-02",
+      "id": 163,
+      "date": "2023-10-01",
       "type": "income",
-      "category": "Gift",
-      "amount": 64110,
-      "description": "Birthday"
+      "category": "Salary",
+      "description": "Monthly salary credited",
+      "amount": 67501
     },
     {
-      "id": "30",
+      "id": 164,
+      "date": "2023-10-21",
+      "type": "expense",
+      "category": "Entertainment",
+      "description": "Entertainment expense",
+      "amount": 2821
+    },
+    {
+      "id": 165,
       "date": "2023-10-05",
       "type": "expense",
-      "category": "Shopping",
-      "amount": 47953,
-      "description": "Electronics"
-    },
-    {
-      "id": "31",
-      "date": "2023-11-03",
-      "type": "income",
-      "category": "Salary",
-      "amount": 64558,
-      "description": "November salary"
-    },
-    {
-      "id": "32",
-      "date": "2023-11-09",
-      "type": "expense",
       "category": "Bills",
-      "amount": 22874,
-      "description": "Rent"
+      "description": "Bills expense",
+      "amount": 3255
     },
     {
-      "id": "33",
-      "date": "2023-11-14",
-      "type": "expense",
-      "category": "Food",
-      "amount": 24205,
-      "description": "Groceries"
-    },
-    {
-      "id": "34",
-      "date": "2023-12-02",
-      "type": "income",
-      "category": "Freelance",
-      "amount": 60824,
-      "description": "Social media project"
-    },
-    {
-      "id": "35",
-      "date": "2023-12-09",
+      "id": 166,
+      "date": "2023-10-03",
       "type": "expense",
       "category": "Entertainment",
-      "amount": 24329,
-      "description": "Movie"
+      "description": "Entertainment expense",
+      "amount": 2781
     },
     {
-      "id": "36",
-      "date": "2023-12-20",
+      "id": 167,
+      "date": "2023-10-09",
       "type": "expense",
-      "category": "Shopping",
-      "amount": 25895,
-      "description": "Christmas gifts"
+      "category": "Entertainment",
+      "description": "Entertainment expense",
+      "amount": 3489
     },
     {
-      "id": "37",
-      "date": "2024-01-05",
+      "id": 168,
+      "date": "2023-11-01",
       "type": "income",
       "category": "Salary",
-      "amount": 66366,
-      "description": "January 2024 salary"
+      "description": "Monthly salary credited",
+      "amount": 64630
     },
     {
-      "id": "38",
-      "date": "2024-01-09",
+      "id": 169,
+      "date": "2023-11-28",
       "type": "expense",
-      "category": "Bills",
-      "amount": 25525,
-      "description": "Utilities"
+      "category": "Other",
+      "description": "Other expense",
+      "amount": 3181
     },
     {
-      "id": "39",
-      "date": "2024-01-12",
-      "type": "expense",
-      "category": "Food",
-      "amount": 24902,
-      "description": "Dinner out"
-    },
-    {
-      "id": "40",
-      "date": "2024-02-02",
-      "type": "income",
-      "category": "Dividends",
-      "amount": 66658,
-      "description": "Stocks"
-    },
-    {
-      "id": "41",
-      "date": "2024-02-10",
+      "id": 170,
+      "date": "2023-11-19",
       "type": "expense",
       "category": "Travel",
-      "amount": 25768,
-      "description": "Vacation"
+      "description": "Travel expense",
+      "amount": 3230
     },
     {
-      "id": "42",
+      "id": 171,
+      "date": "2023-11-17",
+      "type": "expense",
+      "category": "Entertainment",
+      "description": "Entertainment expense",
+      "amount": 2132
+    },
+    {
+      "id": 172,
+      "date": "2023-11-07",
+      "type": "expense",
+      "category": "Bills",
+      "description": "Bills expense",
+      "amount": 1565
+    },
+    {
+      "id": 173,
+      "date": "2023-12-01",
+      "type": "income",
+      "category": "Salary",
+      "description": "Monthly salary credited",
+      "amount": 70673
+    },
+    {
+      "id": 174,
+      "date": "2023-12-25",
+      "type": "expense",
+      "category": "Other",
+      "description": "Other expense",
+      "amount": 3285
+    },
+    {
+      "id": 175,
+      "date": "2023-12-28",
+      "type": "expense",
+      "category": "Shopping",
+      "description": "Shopping expense",
+      "amount": 1877
+    },
+    {
+      "id": 176,
+      "date": "2023-12-16",
+      "type": "expense",
+      "category": "Education",
+      "description": "Education expense",
+      "amount": 1859
+    },
+    {
+      "id": 177,
+      "date": "2023-12-22",
+      "type": "expense",
+      "category": "Travel",
+      "description": "Travel expense",
+      "amount": 3009
+    },
+    {
+      "id": 178,
+      "date": "2023-12-14",
+      "type": "expense",
+      "category": "Food",
+      "description": "Food expense",
+      "amount": 2657
+    },
+    {
+      "id": 179,
+      "date": "2024-01-01",
+      "type": "income",
+      "category": "Salary",
+      "description": "Monthly salary credited",
+      "amount": 71904
+    },
+    {
+      "id": 180,
+      "date": "2024-01-04",
+      "type": "expense",
+      "category": "Education",
+      "description": "Education expense",
+      "amount": 2414
+    },
+    {
+      "id": 181,
+      "date": "2024-01-08",
+      "type": "expense",
+      "category": "Food",
+      "description": "Food expense",
+      "amount": 5331
+    },
+    {
+      "id": 182,
+      "date": "2024-01-21",
+      "type": "expense",
+      "category": "Travel",
+      "description": "Travel expense",
+      "amount": 2183
+    },
+    {
+      "id": 183,
+      "date": "2024-02-01",
+      "type": "income",
+      "category": "Salary",
+      "description": "Monthly salary credited",
+      "amount": 70478
+    },
+    {
+      "id": 184,
+      "date": "2024-02-22",
+      "type": "expense",
+      "category": "Health",
+      "description": "Health expense",
+      "amount": 3119
+    },
+    {
+      "id": 185,
+      "date": "2024-02-15",
+      "type": "expense",
+      "category": "Rent",
+      "description": "Rent expense",
+      "amount": 2370
+    },
+    {
+      "id": 186,
+      "date": "2024-02-14",
+      "type": "expense",
+      "category": "Groceries",
+      "description": "Groceries expense",
+      "amount": 1786
+    },
+    {
+      "id": 187,
+      "date": "2024-02-04",
+      "type": "expense",
+      "category": "Health",
+      "description": "Health expense",
+      "amount": 2549
+    },
+    {
+      "id": 188,
       "date": "2024-02-17",
       "type": "expense",
-      "category": "Food",
-      "amount": 25656,
-      "description": "Snacks"
+      "category": "Health",
+      "description": "Health expense",
+      "amount": 3196
     },
     {
-      "id": "43",
-      "date": "2024-03-04",
+      "id": 189,
+      "date": "2024-03-01",
       "type": "income",
       "category": "Salary",
-      "amount": 65009,
-      "description": "March salary"
+      "description": "Monthly salary credited",
+      "amount": 73685
     },
     {
-      "id": "44",
-      "date": "2024-03-06",
+      "id": 190,
+      "date": "2024-03-10",
       "type": "expense",
-      "category": "Bills",
-      "amount": 28443,
-      "description": "Mobile and DTH"
+      "category": "Groceries",
+      "description": "Groceries expense",
+      "amount": 1970
     },
     {
-      "id": "45",
-      "date": "2024-03-15",
+      "id": 191,
+      "date": "2024-03-02",
       "type": "expense",
-      "category": "Shopping",
-      "amount": 27764,
-      "description": "New phone accessories"
+      "category": "Groceries",
+      "description": "Groceries expense",
+      "amount": 2634
     },
     {
-      "id": "46",
+      "id": 192,
+      "date": "2024-03-24",
+      "type": "expense",
+      "category": "Health",
+      "description": "Health expense",
+      "amount": 1497
+    },
+    {
+      "id": 193,
+      "date": "2024-03-28",
+      "type": "expense",
+      "category": "Other",
+      "description": "Other expense",
+      "amount": 1513
+    },
+    {
+      "id": 194,
+      "date": "2024-03-28",
+      "type": "expense",
+      "category": "Rent",
+      "description": "Rent expense",
+      "amount": 2673
+    },
+    {
+      "id": 195,
       "date": "2024-04-01",
       "type": "income",
-      "category": "Freelance",
-      "amount": 66126,
-      "description": "Consulting"
-    },
-    {
-      "id": "47",
-      "date": "2024-04-08",
-      "type": "expense",
-      "category": "Food",
-      "amount": 24577,
-      "description": "Groceries"
-    },
-    {
-      "id": "48",
-      "date": "2024-04-12",
-      "type": "expense",
-      "category": "Entertainment",
-      "amount": 24253,
-      "description": "Music app"
-    },
-    {
-      "id": "49",
-      "date": "2024-05-03",
-      "type": "income",
       "category": "Salary",
-      "amount": 68654,
-      "description": "May salary"
+      "description": "Monthly salary credited",
+      "amount": 73387
     },
     {
-      "id": "50",
-      "date": "2024-05-09",
+      "id": 196,
+      "date": "2024-04-17",
       "type": "expense",
-      "category": "Bills",
-      "amount": 28875,
-      "description": "Electricity"
+      "category": "Health",
+      "description": "Health expense",
+      "amount": 2589
     },
     {
-      "id": "51",
-      "date": "2024-05-15",
+      "id": 197,
+      "date": "2024-04-05",
+      "type": "expense",
+      "category": "Other",
+      "description": "Other expense",
+      "amount": 1103
+    },
+    {
+      "id": 198,
+      "date": "2024-04-10",
       "type": "expense",
       "category": "Travel",
-      "amount": 29046,
-      "description": "Trip"
+      "description": "Travel expense",
+      "amount": 1930
     },
     {
-      "id": "52",
-      "date": "2024-06-06",
-      "type": "income",
-      "category": "Bonus",
-      "amount": 69116,
-      "description": "Mid-year bonus"
-    },
-    {
-      "id": "53",
-      "date": "2024-06-12",
-      "type": "expense",
-      "category": "Food",
-      "amount": 26313,
-      "description": "Lunches"
-    },
-    {
-      "id": "54",
-      "date": "2024-06-20",
-      "type": "expense",
-      "category": "Bills",
-      "amount": 26471,
-      "description": "Utilities"
-    },
-    {
-      "id": "55",
-      "date": "2024-07-03",
-      "type": "income",
-      "category": "Salary",
-      "amount": 67798,
-      "description": "July salary"
-    },
-    {
-      "id": "56",
-      "date": "2024-07-07",
-      "type": "expense",
-      "category": "Shopping",
-      "amount": 26961,
-      "description": "Online sale"
-    },
-    {
-      "id": "57",
-      "date": "2024-07-16",
-      "type": "expense",
-      "category": "Food",
-      "amount": 27997,
-      "description": "Snacks"
-    },
-    {
-      "id": "58",
-      "date": "2024-08-02",
-      "type": "income",
-      "category": "Freelance",
-      "amount": 68168,
-      "description": "UI Design"
-    },
-    {
-      "id": "59",
-      "date": "2024-08-06",
-      "type": "expense",
-      "category": "Bills",
-      "amount": 25085,
-      "description": "Gas + water"
-    },
-    {
-      "id": "60",
-      "date": "2024-08-19",
-      "type": "expense",
-      "category": "Entertainment",
-      "amount": 24335,
-      "description": "Gaming"
-    },
-    {
-      "id": "61",
-      "date": "2024-09-05",
-      "type": "income",
-      "category": "Salary",
-      "amount": 66878,
-      "description": "September salary"
-    },
-    {
-      "id": "62",
-      "date": "2024-09-10",
+      "id": 199,
+      "date": "2024-04-10",
       "type": "expense",
       "category": "Travel",
-      "amount": 23604,
-      "description": "Weekend trip"
+      "description": "Travel expense",
+      "amount": 1812
     },
     {
-      "id": "63",
-      "date": "2024-09-20",
-      "type": "expense",
-      "category": "Bills",
-      "amount": 24429,
-      "description": "Rent"
-    },
-    {
-      "id": "64",
-      "date": "2024-10-03",
-      "type": "income",
-      "category": "Bonus",
-      "amount": 64495,
-      "description": "Festive bonus"
-    },
-    {
-      "id": "65",
-      "date": "2024-10-06",
+      "id": 200,
+      "date": "2024-04-23",
       "type": "expense",
       "category": "Food",
-      "amount": 24064,
-      "description": "Dinner"
-    },
-    {
-      "id": "66",
-      "date": "2024-10-13",
-      "type": "expense",
-      "category": "Shopping",
-      "amount": 24921,
-      "description": "Gadgets"
-    },
-    {
-      "id": "67",
-      "date": "2024-11-02",
-      "type": "income",
-      "category": "Salary",
-      "amount": 65227,
-      "description": "November salary"
-    },
-    {
-      "id": "68",
-      "date": "2024-11-08",
-      "type": "expense",
-      "category": "Bills",
-      "amount": 24470,
-      "description": "Utilities"
-    },
-    {
-      "id": "69",
-      "date": "2024-11-16",
-      "type": "expense",
-      "category": "Entertainment",
-      "amount": 25565,
-      "description": "Movie + snacks"
-    },
-    {
-      "id": "70",
-      "date": "2024-12-05",
-      "type": "income",
-      "category": "Freelance",
-      "amount": 65061,
-      "description": "App development"
-    },
-    {
-      "id": "71",
-      "date": "2024-12-11",
-      "type": "expense",
-      "category": "Food",
-      "amount": 24488,
-      "description": "Dinner out"
-    },
-    {
-      "id": "72",
-      "date": "2024-12-21",
-      "type": "expense",
-      "category": "Travel",
-      "amount": 24217,
-      "description": "New Year trip"
-    },
-    {
-      "id": "73",
-      "date": "2025-01-03",
-      "type": "income",
-      "category": "Salary",
-      "amount": 70495,
-      "description": "January salary"
-    },
-    {
-      "id": "74",
-      "date": "2025-01-07",
-      "type": "expense",
-      "category": "Bills",
-      "amount": 30338,
-      "description": "Electricity + water"
-    },
-    {
-      "id": "75",
-      "date": "2025-01-20",
-      "type": "expense",
-      "category": "Food",
-      "amount": 30292,
-      "description": "Groceries"
-    },
-    {
-      "id": "76",
-      "date": "2025-02-05",
-      "type": "income",
-      "category": "Bonus",
-      "amount": 70250,
-      "description": "Quarterly bonus"
-    },
-    {
-      "id": "77",
-      "date": "2025-02-08",
-      "type": "expense",
-      "category": "Shopping",
-      "amount": 51111,
-      "description": "Online shopping"
-    },
-    {
-      "id": "78",
-      "date": "2025-03-01",
-      "type": "income",
-      "category": "Freelance",
-      "amount": 76317,
-      "description": "API integration"
-    },
-    {
-      "id": "79",
-      "date": "2025-03-10",
-      "type": "expense",
-      "category": "Bills",
-      "amount": 29112,
-      "description": "Internet"
-    },
-    {
-      "id": "80",
-      "date": "2025-03-18",
-      "type": "expense",
-      "category": "Food",
-      "amount": 29337,
-      "description": "Snacks"
-    },
-    {
-      "id": "81",
-      "date": "2025-04-02",
-      "type": "income",
-      "category": "Salary",
-      "amount": 74405,
-      "description": "April salary"
-    },
-    {
-      "id": "82",
-      "date": "2025-04-10",
-      "type": "expense",
-      "category": "Entertainment",
-      "amount": 27236,
-      "description": "Subscription"
-    },
-    {
-      "id": "83",
-      "date": "2025-04-14",
-      "type": "expense",
-      "category": "Travel",
-      "amount": 28313,
-      "description": "Trip with friends"
-    },
-    {
-      "id": "84",
-      "date": "2025-05-03",
-      "type": "income",
-      "category": "Dividends",
-      "amount": 68965,
-      "description": "Stock payout"
-    },
-    {
-      "id": "85",
-      "date": "2025-05-08",
-      "type": "expense",
-      "category": "Food",
-      "amount": 48381,
-      "description": "Dinner"
-    },
-    {
-      "id": "86",
-      "date": "2025-06-06",
-      "type": "income",
-      "category": "Salary",
-      "amount": 69340,
-      "description": "June salary"
-    },
-    {
-      "id": "87",
-      "date": "2025-06-12",
-      "type": "expense",
-      "category": "Bills",
-      "amount": 61299,
-      "description": "Electricity"
-    },
-    {
-      "id": "88",
-      "date": "2025-07-01",
-      "type": "income",
-      "category": "Freelance",
-      "amount": 70230,
-      "description": "Dashboard redesign"
-    },
-    {
-      "id": "89",
-      "date": "2025-08-08",
-      "type": "expense",
-      "category": "Shopping",
-      "amount": 55916,
-      "description": "New chair"
-    },
-    {
-      "id": "90",
-      "date": "2025-10-22",
-      "type": "expense",
-      "category": "Travel",
-      "amount": 56904,
-      "description": "Goa trip"
+      "description": "Food expense",
+      "amount": 1386
     }
   ]
 }
